@@ -1,0 +1,1 @@
+-keepclassmembers class com.dreamrig.mp.DreamRigBridge { @android.webkit.JavascriptInterface <methods>; }

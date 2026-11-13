@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.dreamrig.tomato'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.dreamrig.tomato"
+        minSdk 24
+        targetSdk 34
+        versionCode 50
+        versionName "5.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // ไฟล์เกมเป็น HTML ใหญ่ ~3 MB: ห้ามบีบอัดซ้ำใน asset
+    androidResources {
+        noCompress 'html', 'mp3'
+    }
+}
